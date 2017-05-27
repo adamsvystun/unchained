@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'unchainedOne.apps.UnchainedoneConfig',
+    'channels'
 ]
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "unchainedOne.routing.channel_routing",
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
