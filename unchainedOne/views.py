@@ -37,6 +37,18 @@ def channels(request):
         return JsonResponse(channels_set, safe=False)
 
 @csrf_exempt
+def getUser(request):
+    if request.method == "GET":
+        user = request.session.get('user')
+        if not user:
+            user = {
+                "id": randomId(),
+                "name": randomName()
+            }
+            request.session["user"] = user
+        return JsonResponse(user, safe=False)
+
+@csrf_exempt
 def getUserAreas(request):
     if request.method == "GET":
         areaIds = request.session.get('areas', [])
