@@ -15,3 +15,16 @@ def findArea(request):
         for a in result.objects.all():
             areas.append({'id': a.id, 'area_name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
         return JsonResponse(areas)
+
+@csrf_exempt
+def channels(request):
+    if request.method == "GET":
+        area = int(request.GET["pk"])
+
+        resultArea = Area.objects.get(pk=area)
+        channels_set = ()
+        for c in resultArea.channel_set.all():
+            channels_set.add(c)
+        return JsonResponse(channels_set)
+
+
