@@ -9,7 +9,7 @@ export function addArea(area){
     }
 }
 
-export function addAreaAsync(area) {
+export function addAreaFetchChannels(area) {
     return dispatch => {
         dispatch(addArea(area))
         getChannels({area: area.id}).then((res)=>{

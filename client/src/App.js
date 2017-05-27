@@ -11,7 +11,8 @@ import HomePage from './containers/HomePage'
 import AreaPage from './containers/AreaPage'
 import ChannelPage from './containers/ChannelPage'
 
-import { addAreaAsync } from './actions/area'
+import { addAreaFetchChannels } from './actions/area'
+import { fetchUser } from './actions/user'
 import { getUserAreas } from './api/area'
 
 const Home = ({match}) => (<div className="app-wrap">
@@ -29,9 +30,12 @@ const Channel = ({match}) => (<div className="app-wrap">
 class App extends Component {
     componentWillMount(){
         getUserAreas().then((res)=>{
-            console.log(res.data)
-            res.data.forEach((o)=>{
-                this.props.dispatch(addAreaAsync(o))
+            this.props.dispatch(fetchUser({
+                id: res.data.id,
+                name: res.data.name
+            }))
+            res.data.areas.forEach((area)=>{
+                this.props.dispatch(addAreaFetchChannels(area))
             })
         })
     }
