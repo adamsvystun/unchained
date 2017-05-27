@@ -19,6 +19,7 @@ class Channel(models.Model):
 class User(models.Model):
     session_id = models.IntegerField
     user_name = models.CharField(max_length=30)
+    areas = models.ManyToManyField(Area)
 
     def __str__(self):
         return self.user_name
