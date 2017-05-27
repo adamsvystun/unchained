@@ -15,29 +15,20 @@ def findArea(request):
             lat = float(lat)
         if long:
             long = float(long)
-        #IF sqrt (lat-xCord)^2+(long-yCord)^2 <= radius THEN return Area.object
+        results = Area.objects.all()
         areas = []
-<<<<<<< HEAD
-        for a in result.objects.all():
-            areas.append({'id': a.id, 'area_name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
-        return JsonResponse(areas)
+        for a in results:
+            if sqrt((lat - a.xCord) ** 2 + (long - a.yCord) ** 2) <= a.radius:
+                areas.append({'id': a.id, 'area_name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
+        return JsonResponse(areas, safe=False)
 
 @csrf_exempt
 def channels(request):
     if request.method == "GET":
         area = int(request.GET["pk"])
-
+        print(area)
         resultArea = Area.objects.get(pk=area)
-        channels_set = ()
+        channels_set = []
         for c in resultArea.channel_set.all():
-            channels_set.add(c)
-        return JsonResponse(channels_set)
-
-
-=======
-        if lat and long:
-            result = Area.objects.get(sqrt((lat-Area.xCord)^2+(long-Area.yCord)^2) <= Area.radius)
-            for a in result.objects.all():
-                areas.append({'id': a.id, 'area_name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
-        return JsonResponse({"areas": areas})
->>>>>>> 8db5c070add37f386319c440069c8b1c013f571d
+            channels_set.append({'id':c.id, 'channel_name':c.channel_name})
+        return JsonResponse(channels_set, safe=False)
