@@ -33,7 +33,8 @@ def ws_message(message):
     })
     msg = json.loads(message['text'])
     if msg["type"] == "addMessage":
-        Message.objects.cre
+        m = Message(channel_id=int(message.channel_session['room']), user=msg['message']['user'], pub_date=timezone.now(), text=msg['message']['text'])
+        m.save()
 
 # Connected to websocket.disconnect
 @channel_session
