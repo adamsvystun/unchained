@@ -14,8 +14,9 @@ export function openChannel(id){
                 break
             }
             case "fetchMessages": {
+                console.log("[socket] Fetching messages",data)
                 data.messages.forEach((o)=>{
-                    addMessage(o)
+                    store.dispatch(addMessage(o))
                 })
                 break
             }

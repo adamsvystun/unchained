@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b6e7e6a554ac071d25d0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9ad02c61b216a2748cae"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -14916,8 +14916,9 @@ function openChannel(id) {
                 }
             case "fetchMessages":
                 {
+                    console.log("[socket] Fetching messages", data);
                     data.messages.forEach(function (o) {
-                        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__actions_message__["a" /* addMessage */])(o);
+                        __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__actions_message__["a" /* addMessage */])(o));
                     });
                     break;
                 }

@@ -15,11 +15,17 @@ def ws_connect(message):
     last_messages = []
     now = timezone.now()
     messages = Message.objects.all()
+    print(now, messages)
     for m in messages:
-        if (m.channel == int(room)) and (now - datetime.timedelta(hours=1) <= m.pub_date <= now):
-            last_messages.append(m)
-
-    text = json.dumps({"type": 'fetchMesages', "messages": last_messages})
+        if (m.channel_id == int(room)) and (now - datetime.timedelta(hours=10) <= m.pub_date):
+            last_messages.append({
+                "text": m.text,
+                "user": m.user,
+                "pub_date": m.pub_date.isoformat(),
+                "channel": m.channel_id
+            })
+    print(last_messages)
+    text = json.dumps({"type": 'fetchMessages', "messages": last_messages})
     Group("chat-%s" % room).add(message.reply_channel)
     Group("chat-%s" % room).send({
         "text": text,
