@@ -9,8 +9,8 @@
   color: black;
   height: 40px;
   line-height: 40px;
-  padding: 0 5px;
-  border-left: 3px solid #06d9bc; }
+  padding: 0 15px;
+  border-left: 1px solid #06c0a7; }
   .header__nav-item:first-child {
     border-left: 0; }
 

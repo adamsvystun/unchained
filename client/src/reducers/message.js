@@ -9,7 +9,13 @@ var initialState = [{
 export default function reducer(state=initialState, action){
     switch (action.type) {
         case "ADD_MESSAGE": {
-            console.log(action.payload)
+            var new_message = {
+                text: action.payload.text,
+                user: action.payload.user || "Annonymous",
+                pub_date: action.payload.pub_date,
+                channel: action.payload.channel
+            }
+            return [...state, new_message]
         }
     }
     return state

@@ -1,21 +1,25 @@
 .channel-input {
-  height: 40px;
-  display: flex; }
+  height: 30px;
+  display: flex;
+  margin-top: 5px; }
 
 .channel-input__wrap {
   flex: 1; }
 
 #channel-input__input {
-  width: 90%;
-  margin: 4px 5%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 3px;
+  width: 95%;
+  margin: 0 5% 0 0;
   padding: 0 0 0 5px;
   font-size: 16px;
   outline: 0;
-  border: 1px solid gray;
   height: 30px; }
 
 #channel-input__submit {
   padding: 0 15px;
-  line-height: 40px;
-  border-radius: 20px;
+  line-height: 30px;
+  border-radius: 15px;
+  background: #fff;
   border: 1px solid #07f2d2; }

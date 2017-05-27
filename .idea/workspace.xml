@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ee032e9-5dd3-450c-bf22-3697681143fb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/actions/message.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/api/sockets.js" afterPath="$PROJECT_DIR$/client/src/api/sockets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelInput/index.js" afterPath="$PROJECT_DIR$/client/src/components/ChannelInput/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.css" afterPath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.scss" afterPath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelList/index.js" afterPath="$PROJECT_DIR$/client/src/components/ChannelList/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Header/styles.css" afterPath="$PROJECT_DIR$/client/src/components/Header/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Header/styles.scss" afterPath="$PROJECT_DIR$/client/src/components/Header/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/MessageList/index.js" afterPath="$PROJECT_DIR$/client/src/components/MessageList/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/MessageList/styles.css" afterPath="$PROJECT_DIR$/client/src/components/MessageList/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/MessageList/styles.scss" afterPath="$PROJECT_DIR$/client/src/components/MessageList/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/containers/ChannelPage/index.js" afterPath="$PROJECT_DIR$/client/src/containers/ChannelPage/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/reducers/message.js" afterPath="$PROJECT_DIR$/client/src/reducers/message.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unchainedOne/consumers.py" afterPath="$PROJECT_DIR$/unchainedOne/consumers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unchainedOne/urls.py" afterPath="$PROJECT_DIR$/unchainedOne/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/unchainedOne/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -46,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/unchainedOne/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,6 +75,12 @@
               <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <marker date="1495922547705" expanded="true" signature="233:816" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="487:621" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="787:814" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="892:1096" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="954:992" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="1178:1264" ph="..." />
               </folding>
             </state>
           </provider>
@@ -628,7 +650,7 @@
     <entry file="file://$PROJECT_DIR$/unchainedOne/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -656,7 +678,7 @@
     <entry file="file://$PROJECT_DIR$/unchainedOne/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -667,6 +689,12 @@
           <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1495922547705" expanded="true" signature="233:816" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="487:621" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="787:814" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="892:1096" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="954:992" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="1178:1264" ph="..." />
           </folding>
         </state>
       </provider>

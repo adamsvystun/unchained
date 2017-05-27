@@ -10,7 +10,7 @@ import datetime
 @channel_session
 def ws_connect(message):
     message.reply_channel.send({"accept": True})
-    room = message.content['path'].strip("/")
+    room = message.content['path'].rsplit('/', 1)[-1]
     message.channel_session['room'] = room
     last_messages = []
     now = timezone.now()

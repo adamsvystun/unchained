@@ -14,7 +14,7 @@ class ChannelPage extends Component {
         return (
             <div className="wrap channel-page">
                 <MessageList messages={messages} />
-                <ChannelInput />
+                <ChannelInput channel={channel}/>
             </div>
         );
     }
