@@ -1,5 +1,6 @@
+$color: #07f2d2;
 .header {
-    background: #07f2d2;
+    background: $color;
 }
 .header__nav {
     display: flex;

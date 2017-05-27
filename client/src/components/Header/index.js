@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 // import logo from './logo.svg';
-import './styles.css';
+import './styles.scss';
 
 class Header extends Component {
     render() {
@@ -9,7 +9,6 @@ class Header extends Component {
             <div className="header__nav">
               <Link to="/" className="header__nav-item">Areas</Link>
               <Link to="/area/1" className="header__nav-item">Channels</Link>
-              <Link to="/channel/1" className="header__nav-item">Channel</Link>
             </div>
         </div>)
     }
