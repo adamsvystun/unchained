@@ -18,7 +18,7 @@ client/node_modules/
 unchainedVirtual/
 coverage/
 build/
-.sqlite3
+*.sqlite3
 .DS_Store
 .env.local
 .env.development.local

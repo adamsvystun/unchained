@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ee032e9-5dd3-450c-bf22-3697681143fb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/actions/message.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/api/sockets.js" afterPath="$PROJECT_DIR$/client/src/api/sockets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelInput/index.js" afterPath="$PROJECT_DIR$/client/src/components/ChannelInput/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.css" afterPath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.scss" afterPath="$PROJECT_DIR$/client/src/components/ChannelInput/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/ChannelList/index.js" afterPath="$PROJECT_DIR$/client/src/components/ChannelList/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Header/styles.css" afterPath="$PROJECT_DIR$/client/src/components/Header/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Header/styles.scss" afterPath="$PROJECT_DIR$/client/src/components/Header/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/MessageList/index.js" afterPath="$PROJECT_DIR$/client/src/components/MessageList/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/MessageList/styles.css" afterPath="$PROJECT_DIR$/client/src/components/MessageList/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/MessageList/styles.scss" afterPath="$PROJECT_DIR$/client/src/components/MessageList/styles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/containers/ChannelPage/index.js" afterPath="$PROJECT_DIR$/client/src/containers/ChannelPage/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/reducers/message.js" afterPath="$PROJECT_DIR$/client/src/reducers/message.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unchainedOne/consumers.py" afterPath="$PROJECT_DIR$/unchainedOne/consumers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unchainedOne/models.py" afterPath="$PROJECT_DIR$/unchainedOne/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unchainedOne/urls.py" afterPath="$PROJECT_DIR$/unchainedOne/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/unchainedOne/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -44,23 +58,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unchainedOne/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="306">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="consumers.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="consumers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unchainedOne/consumers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="630">
+              <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <marker date="1495922547705" expanded="true" signature="233:816" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="487:621" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="787:814" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="892:1096" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="954:992" ph="..." />
+                <marker date="1495922547705" expanded="true" signature="1178:1264" ph="..." />
               </folding>
             </state>
           </provider>
@@ -151,8 +171,8 @@
         <option value="$PROJECT_DIR$/Unchained/settings.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/unchainedOne/routing.py" />
-        <option value="$PROJECT_DIR$/unchainedOne/consumers.py" />
         <option value="$PROJECT_DIR$/unchainedOne/models.py" />
+        <option value="$PROJECT_DIR$/unchainedOne/consumers.py" />
       </list>
     </option>
   </component>
@@ -163,10 +183,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1092" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -465,7 +485,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -475,7 +496,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -629,7 +650,7 @@
     <entry file="file://$PROJECT_DIR$/unchainedOne/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -654,21 +675,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unchainedOne/consumers.py">
+    <entry file="file://$PROJECT_DIR$/unchainedOne/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unchainedOne/models.py">
+    <entry file="file://$PROJECT_DIR$/unchainedOne/consumers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="630">
+          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1495922547705" expanded="true" signature="233:816" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="487:621" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="787:814" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="892:1096" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="954:992" ph="..." />
+            <marker date="1495922547705" expanded="true" signature="1178:1264" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
