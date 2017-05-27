@@ -32,3 +32,5 @@ def channels(request):
         for c in resultArea.channel_set.all():
             channels_set.append({'id':c.id, 'channel_name':c.channel_name})
         return JsonResponse(channels_set, safe=False)
+
+#websockets
