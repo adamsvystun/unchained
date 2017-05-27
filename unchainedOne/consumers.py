@@ -1,18 +1,30 @@
 from channels import Group
+from channels.sessions import channel_session
+import json
 
 # Connected to websocket.connect
-def ws_add(message):
-    # Accept the connection
+@channel_session
+def ws_connect(message):
     message.reply_channel.send({"accept": True})
-    # Add to the chat group
-    Group("1").add(message.reply_channel)
-
-# Connected to websocket.receive
-def ws_message(message):
-    Group("1").send({
-        "text": " %s" % message.content['text'],
+    room = message.content['path'].strip("/")
+    message.channel_session['room'] = room
+    text = json.dumps({"type": 'fetchMesages', "messages": []})
+    Group("chat-%s" % room).add(message.reply_channel)
+    Group("chat-%s" % room).send({
+        "text": text,
     })
 
+# Connected to websocket.receive
+@channel_session
+def ws_message(message):
+    Group("chat-%s" % message.channel_session['room']).send({
+        "text": message['text'],
+    })
+    msg = json.loads(message['text'])
+    if msg["type"] == "addMessage":
+        print(msg)
+
 # Connected to websocket.disconnect
+@channel_session
 def ws_disconnect(message):
-    Group("chat").discard(message.reply_channel)
+    Group("chat-%s" % message.channel_session['room']).discard(message.reply_channel)
