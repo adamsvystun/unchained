@@ -4,11 +4,12 @@
 .messages-list {
     flex: 1;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .message__row {
     display: flex;
-    
+    margin: 3px 0;
 }
 .message {
     height: 30px;

@@ -6,7 +6,7 @@ import json
 @channel_session
 def ws_connect(message):
     message.reply_channel.send({"accept": True})
-    room = message.content['path'].strip("/")
+    room = message.content['path'].rsplit('/', 1)[-1]
     message.channel_session['room'] = room
     text = json.dumps({"type": 'fetchMesages', "messages": []})
     Group("chat-%s" % room).add(message.reply_channel)

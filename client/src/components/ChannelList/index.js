@@ -8,8 +8,8 @@ class ChannelList extends Component {
     render() {
         var channels = this.props.channels
         var area = this.props.area
-        var channelList = channels.map((o)=>{
-            return (<NavLink to={"/area/"+area+"/channel/"+o.id} className="channel-list__item" key={o.id}>
+        var channelList = channels.map((o, i)=>{
+            return (<NavLink to={"/area/"+area+"/channel/"+o.id} className="channel-list__item" key={i}>
                 {o.name}
             </NavLink>)
         })

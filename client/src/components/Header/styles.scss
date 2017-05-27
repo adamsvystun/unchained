@@ -11,8 +11,8 @@
     color: black;
     height: 40px;
     line-height: 40px;
-    padding: 0 5px;
-    border-left: 3px solid darken($color, 5);
+    padding: 0 15px;
+    border-left: 1px solid darken($color, 10);
     &:first-child {
         border-left: 0;
     }

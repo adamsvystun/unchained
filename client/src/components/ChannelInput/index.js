@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
-import { send } from '../../api/sockets'
+import { sendMessage } from '../../api/sockets'
 
 import './styles.css'
 
 class ChannelInput extends Component {
     onSend() {
         var input = document.getElementById("channel-input__input")
-        console.log(input.value)
+        sendMessage({
+            text: input.value,
+            pub_date: Date.now(),
+            user: "Annonymous",
+            channel: this.props.channel
+        })
         input.value = ""
     }
     render() {

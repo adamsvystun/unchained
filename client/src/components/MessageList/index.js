@@ -7,8 +7,8 @@ class MessageList extends Component {
         var messages = this.props.messages
         var messagesList;
         if(messages){
-            messagesList = messages.map((o)=>{
-                return (<div key={o.id} className="message__row">
+            messagesList = messages.map((o, i)=>{
+                return (<div key={i} className="message__row">
                     <div className="message">{o.text}</div>
                 </div>)
             })
