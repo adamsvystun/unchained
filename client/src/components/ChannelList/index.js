@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 
 // import logo from './logo.svg';
-import './styles.scss';
+import './styles.css';
 
 class ChannelList extends Component {
     render() {

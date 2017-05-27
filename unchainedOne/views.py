@@ -3,9 +3,11 @@ from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from math import sqrt
 import json
+from django.shortcuts import render
 
 @csrf_exempt
 def findArea(request):
+    print(request.method)
     if request.method == "POST":
         data = json.loads(request.body.decode("utf-8"))
         print(data)
@@ -20,7 +22,8 @@ def findArea(request):
         for a in results:
             if sqrt((lat - a.xCord) ** 2 + (long - a.yCord) ** 2) <= a.radius:
                 areas.append({'id': a.id, 'area_name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
-        return JsonResponse(areas, safe=False)
+        response = JsonResponse(areas, safe=False)
+        return response
 
 @csrf_exempt
 def channels(request):
@@ -32,3 +35,6 @@ def channels(request):
         for c in resultArea.channel_set.all():
             channels_set.append({'id':c.id, 'channel_name':c.channel_name})
         return JsonResponse(channels_set, safe=False)
+
+def index(request):
+    return render(request, "app.html")
