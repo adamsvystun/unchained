@@ -10,7 +10,7 @@ def ws_connect(message):
     message.channel_session['room'] = room
     text = json.dumps({"type": 'fetchMesages', "messages": []})
     Group("chat-%s" % room).add(message.reply_channel)
-    Group("chat-%s" % room).send({
+    Group("chat-%s" % room).send({ #serve messages
         "text": text,
     })
 
@@ -22,7 +22,7 @@ def ws_message(message):
     })
     msg = json.loads(message['text'])
     if msg["type"] == "addMessage":
-        print(msg)
+        print(msg) #save message
 
 # Connected to websocket.disconnect
 @channel_session
