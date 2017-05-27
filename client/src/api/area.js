@@ -10,3 +10,9 @@ export function findArea({ lat, long}) {
 export function getUserAreas() {
     return axios.get('/getUserAreas/')
 }
+
+export function addUserArea({ area }) {
+    return axios.post('/addUserArea/', {
+        area: area
+    })
+}

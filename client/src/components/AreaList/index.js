@@ -6,8 +6,8 @@ import './styles.css';
 class AreaList extends Component {
     render() {
         var areas = this.props.areas
-        var areaList = areas.map((o)=>{
-            return (<NavLink to={"/area/"+o.id} className="area-list__item" key={o.id}>
+        var areaList = areas.map((o, i)=>{
+            return (<NavLink to={"/area/"+o.id} className="area-list__item" key={i}>
                 {o.name}
             </NavLink>)
         })

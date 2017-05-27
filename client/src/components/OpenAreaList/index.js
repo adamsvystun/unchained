@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 
-import { addAreaAsync } from '../../actions/area'
+import { addUserAreaAsync } from '../../actions/area'
 import './styles.css';
 
 class OpenAreaList extends Component {
     onAreaClick(area){
-        this.props.dispatch(addAreaAsync(area))
+        this.props.dispatch(addUserAreaAsync(area))
     }
     render() {
         var areas = this.props.areas
