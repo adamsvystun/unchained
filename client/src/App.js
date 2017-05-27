@@ -1,25 +1,3 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-//
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <div className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h2>Welcome to React</h2>
-//         </div>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
-//
-// export default App;
-
 import React from 'react'
 import {
   BrowserRouter as Router,
@@ -27,11 +5,10 @@ import {
   Link
 } from 'react-router-dom'
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
+import Header from './components/Header'
+import HomePage from './containers/HomePage'
+import AreaPage from './containers/AreaPage'
+import ChannelPage from './containers/ChannelPage'
 
 const About = () => (
   <div>
@@ -74,20 +51,13 @@ const Topics = ({ match }) => (
 )
 
 const BasicExample = () => (
-  <Router>
+<Router>
     <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-      </ul>
-
-      <hr/>
-
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+        <Header />
+        <Route exact path="/" component={HomePage}/>
+        <Route path="/area/:id" component={AreaPage}/>
+        <Route path="/channel/:id" component={ChannelPage}/>
     </div>
-  </Router>
+</Router>
 )
 export default BasicExample
