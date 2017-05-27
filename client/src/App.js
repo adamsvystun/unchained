@@ -29,8 +29,9 @@ const Channel = ({match}) => (<div className="app-wrap">
 class App extends Component {
     componentWillMount(){
         getUserAreas().then((res)=>{
+            console.log(res.data)
             res.data.forEach((o)=>{
-                this.props.dispatch(addAreaAsync(area))
+                this.props.dispatch(addAreaAsync(o))
             })
         })
     }

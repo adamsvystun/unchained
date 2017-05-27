@@ -7,7 +7,6 @@ from django.shortcuts import render
 
 @csrf_exempt
 def findArea(request):
-    print(request.method)
     if request.method == "POST":
         data = json.loads(request.body.decode("utf-8"))
         lat = data.get("lat")
@@ -40,8 +39,9 @@ def channels(request):
 @csrf_exempt
 def getUserAreas(request):
     if request.method == "GET":
-        areaIds = request.session['areas']
-        # areas = [id, id, id]
+        areaIds = request.session.get('areas', [])
+        areaIds = list(set(areaIds))
+        request.session['areas'] = areaIds
         areas = []
         for pk in areaIds:
             a = Area.objects.get(pk=pk)
@@ -52,10 +52,13 @@ def getUserAreas(request):
 def addUserArea(request):
     if request.method == "POST":
         data = json.loads(request.body.decode("utf-8"))
-        area = data.get("area")
-        areaIds = request.session.get('areas', [])
-        areaIds.append(area)
-        return JsonResponse(areas, safe=False)
+        areaId = data.get('area')
+        if areaId:
+            areaIds = request.session.get('areas', [])
+            areaIds.append(areaId)
+            request.session['areas'] = areaIds
+            return JsonResponse({"status": "ok"}, safe=False)
+        return JsonResponse({"status": "error"}, safe=False)
 
 def index(request):
     return render(request, "app.html")
