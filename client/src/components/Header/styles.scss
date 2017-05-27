@@ -12,7 +12,10 @@
     height: 40px;
     line-height: 40px;
     padding: 0 5px;
-
+    border-left: 3px solid darken($color, 5);
+    &:first-child {
+        border-left: 0;
+    }
 }
 .header__nav-item--selected {
     background: darken($color, 3);

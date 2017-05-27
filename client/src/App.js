@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -22,15 +22,20 @@ const Channel = ({match}) => (<div className="app-wrap">
     <Header match={match}/>
     <ChannelPage match={match}/>
 </div>)
-const App = (props) => {
-    return (
-    <Router>
-        <div className="router-wrap">
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/area/:id" component={Area}/>
-            <Route exact path="/area/:area/channel/:id" component={Channel}/>
-        </div>
-    </Router>
-    )
+class App extends Component {
+    constructor(props) {
+        super(props)
+    }
+    render(){
+        return (
+        <Router>
+            <div className="router-wrap">
+                <Route exact strict path="/" component={Home}/>
+                <Route exact path="/area/:area" component={Area}/>
+                <Route exact path="/area/:area/channel/:channel" component={Channel}/>
+            </div>
+        </Router>
+        )
+    }
 }
 export default App

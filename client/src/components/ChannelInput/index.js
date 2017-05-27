@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { send } from '../../api/sockets'
 
 import './styles.scss'
 

@@ -7,7 +7,7 @@ import './styles.css';
 
 class ChannelPage extends Component {
     render() {
-        var channel = this.props.match.params.id
+        var channel = this.props.match.params.channel
         var messages = this.props.messages.filter((o)=>{
             return o.channel == channel
         })
