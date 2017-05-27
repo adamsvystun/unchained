@@ -1,23 +1,37 @@
 import store from '../store'
 import { addMessage } from '../actions/message'
+var wsocket;
 
-let wsocket = new WebSocket("ws://"+ window.location.host +"/websocket/1")
-console.log(wsocket)
-wsocket.onopen = onOpen
-wsocket.onerror = onError
+export function openChannel(id){
+    console.log("[socket] Opening channel "+id)
+    wsocket = new WebSocket("ws://"+ window.location.host +"/websocket/"+id)
 
-function onOpen(e) {
-    console.log(e)
+    wsocket.onmessage = e => {
+        let data = JSON.parse(e.data);
+        switch (data.type) {
+            case "addMessage": {
+                store.dispatch(addMessage(data.message));
+                break
+            }
+            case "fetchMessages": {
+                console.log("[socket] Fetching messages",data)
+                data.messages.forEach((o)=>{
+                    store.dispatch(addMessage(o))
+                })
+                break
+            }
+        }
+    }
 }
-function onError(e) {
-    console.log(e)
+
+export function closeChannel(){
+    console.log("[socket] Closing channel")
+     wsocket.close()
 }
-export function send(msg) {
-    wsocket.send(msg)
-}
+
 export function sendMessage({ text, user, pub_date, channel}) {
     wsocket.send(JSON.stringify({
-        type:"addMessage",
+        type: "addMessage",
         message: {
             text: text,
             user: user,
@@ -25,20 +39,4 @@ export function sendMessage({ text, user, pub_date, channel}) {
             channel: channel
         }
     }))
-}
-
-wsocket.onmessage = e => {
-    let data = JSON.parse(e.data);
-    switch (data.type) {
-        case "addMessage": {
-            store.dispatch(addMessage(data.message));
-            break
-        }
-        case "fetchMessages": {
-            data.messages.forEach((o)=>{
-                addMessage(o)
-            })
-            break
-        }
-    }
 }

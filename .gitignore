@@ -11,13 +11,13 @@ docs/locale/
 node_modules/
 tests/coverage_html/
 tests/.coverage
-build/
+
 tests/report/
 client/node_modules/
 .idea/
 unchainedVirtual/
 coverage/
-build/
+
 *.sqlite3
 .DS_Store
 .env.local
