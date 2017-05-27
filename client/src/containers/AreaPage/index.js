@@ -5,7 +5,7 @@ import './styles.css';
 
 class AreaPage extends Component {
     render() {
-        var area = this.props.match.params.id
+        var area = this.props.match.params.area
         var channels = this.props.channels.filter((o)=>{
             return o.area == area
         })
