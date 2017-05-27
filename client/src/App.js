@@ -10,14 +10,27 @@ import HomePage from './containers/HomePage'
 import AreaPage from './containers/AreaPage'
 import ChannelPage from './containers/ChannelPage'
 
-const App = () => (
-<Router>
-    <div className="app-wrap">
-        <Header />
-        <Route exact path="/" component={HomePage}/>
-        <Route path="/area/:id" component={AreaPage}/>
-        <Route path="/channel/:id" component={ChannelPage}/>
-    </div>
-</Router>
-)
+const Home = ({match}) => (<div className="app-wrap">
+    <Header match={match}/>
+    <HomePage match={match}/>
+</div>)
+const Area = ({match}) => (<div className="app-wrap">
+    <Header match={match}/>
+    <AreaPage match={match}/>
+</div>)
+const Channel = ({match}) => (<div className="app-wrap">
+    <Header match={match}/>
+    <ChannelPage match={match}/>
+</div>)
+const App = (props) => {
+    return (
+    <Router>
+        <div className="router-wrap">
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/area/:id" component={Area}/>
+            <Route exact path="/area/:area/channel/:id" component={Channel}/>
+        </div>
+    </Router>
+    )
+}
 export default App

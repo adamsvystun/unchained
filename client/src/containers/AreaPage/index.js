@@ -11,7 +11,7 @@ class AreaPage extends Component {
         })
         return (
             <div className="wrap">
-                <ChannelList channels={channels}/>
+                <ChannelList channels={channels} area={area}/>
             </div>
         );
     }

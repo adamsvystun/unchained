@@ -4,8 +4,9 @@ import './styles.scss'
 
 class ChannelInput extends Component {
     onSend() {
-        var msg = document.getElementById("channel-input__input").value
-        console.log(msg)
+        var input = document.getElementById("channel-input__input")
+        console.log(input.value)
+        input.value = ""
     }
     render() {
         return (<div className="channel-input">

@@ -8,7 +8,9 @@ class MessageList extends Component {
         var messagesList;
         if(messages){
             messagesList = messages.map((o)=>{
-                return (<div>{o.text}</div>)
+                return (<div key={o.id} className="message__row">
+                    <div className="message">{o.text}</div>
+                </div>)
             })
         }
         return (<div className="messages-list">
