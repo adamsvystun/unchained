@@ -1,5 +1,7 @@
 from channels.routing import route
+from unchainedOne.consumers import ws_add, ws_disconnect
 
 channel_routing = [
-    route("http.request", "unchainedOne.consumers.http_consumer"),
+    route("websocket.connect", ws_add),
+    route("websocket.connect", ws_disconnect),
 ]
