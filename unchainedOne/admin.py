@@ -4,5 +4,4 @@ from .models import *
 
 admin.site.register(Area)
 admin.site.register(Channel)
-admin.site.register(User)
 admin.site.register(Message)
