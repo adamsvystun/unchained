@@ -1,0 +1,19 @@
+@import "../../styles/core";
+
+.header {
+    background: $color;
+}
+.header__nav {
+    display: flex;
+}
+.header__nav-item {
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+
+}
+.header__nav-item--selected {
+    background: darken($color, 3);
+}
