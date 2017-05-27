@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 
-import './styles.scss';
+import './styles.css';
 
 class AreaList extends Component {
     render() {

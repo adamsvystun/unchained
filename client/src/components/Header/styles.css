@@ -1,0 +1,18 @@
+.header {
+  background: #07f2d2; }
+
+.header__nav {
+  display: flex; }
+
+.header__nav-item {
+  text-decoration: none;
+  color: black;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 5px;
+  border-left: 3px solid #06d9bc; }
+  .header__nav-item:first-child {
+    border-left: 0; }
+
+.header__nav-item--selected {
+  background: #07e3c5; }

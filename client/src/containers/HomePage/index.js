@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AreaList from '../../components/AreaList'
 import './styles.css';
+import { findArea } from '../../api/area'
 
 class HomePage extends Component {
     constructor(props){
@@ -13,6 +14,12 @@ class HomePage extends Component {
         this.getLocation()
     }
     consumeLocation(o){
+        findArea({
+            lat: o.coords.latitude,
+            long: o.coords.longitude
+        }).then((res)=>{
+            console.log(res)
+        })
         this.setState({loc: o})
     }
     getLocation() {

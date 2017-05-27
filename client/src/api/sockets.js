@@ -1,8 +1,10 @@
 import store from '../store'
 
-let wsocket = new WebSocket("ws://localhost:8080/socket/1")
+let wsocket = new WebSocket("ws://localhost:8000/channel/1")
 console.log(wsocket)
 wsocket.onopen = onOpen
+wsocket.onerror = onError
+
 store.dispatch({
     type: "ADD_MESSAGE",
     payload: {
@@ -10,6 +12,9 @@ store.dispatch({
     }
 })
 function onOpen(e) {
+    console.log(e)
+}
+function onError(e) {
     console.log(e)
 }
 export function send(msg) {
