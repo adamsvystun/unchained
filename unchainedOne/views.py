@@ -10,7 +10,6 @@ def findArea(request):
     print(request.method)
     if request.method == "POST":
         data = json.loads(request.body.decode("utf-8"))
-        print(data)
         lat = data.get("lat")
         long = data.get("long")
         if lat:
@@ -37,6 +36,26 @@ def channels(request):
         for c in resultArea.channel_set.all():
             channels_set.append({'id':c.id, 'name':c.channel_name, 'area': area})
         return JsonResponse(channels_set, safe=False)
+
+@csrf_exempt
+def getUserAreas(request):
+    if request.method == "GET":
+        areaIds = request.session['areas']
+        # areas = [id, id, id]
+        areas = []
+        for pk in areaIds:
+            a = Area.objects.get(pk=pk)
+            areas.append({'id': a.id, 'name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
+        return JsonResponse(areas, safe=False)
+
+@csrf_exempt
+def addUserArea(request):
+    if request.method == "POST":
+        data = json.loads(request.body.decode("utf-8"))
+        area = data.get("area")
+        areaIds = request.session.get('areas', [])
+        areaIds.append(area)
+        return JsonResponse(areas, safe=False)
 
 def index(request):
     return render(request, "app.html")

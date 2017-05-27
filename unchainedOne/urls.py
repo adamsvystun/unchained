@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^area/', views.index, name='index'),
     url(r'^findArea/$', views.findArea, name='findArea'),
     url(r'^channels/$', views.channels, name='channels'),
+    url(r'^getUserAreas/$', views.getUserAreas, name='getUserAreas'),
+    url(r'^addUserArea/$', views.addUserArea, name='addUserArea'),
 ]

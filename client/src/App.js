@@ -4,11 +4,15 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 import Header from './components/Header'
 import HomePage from './containers/HomePage'
 import AreaPage from './containers/AreaPage'
 import ChannelPage from './containers/ChannelPage'
+
+import { addAreaAsync } from './actions/area'
+import { getUserAreas } from './api/area'
 
 const Home = ({match}) => (<div className="app-wrap">
     <Header match={match}/>
@@ -23,8 +27,12 @@ const Channel = ({match}) => (<div className="app-wrap">
     <ChannelPage match={match}/>
 </div>)
 class App extends Component {
-    constructor(props) {
-        super(props)
+    componentWillMount(){
+        getUserAreas().then((res)=>{
+            res.data.forEach((o)=>{
+                this.props.dispatch(addAreaAsync(area))
+            })
+        })
     }
     render(){
         return (
@@ -38,4 +46,4 @@ class App extends Component {
         )
     }
 }
-export default App
+export default connect()(App)

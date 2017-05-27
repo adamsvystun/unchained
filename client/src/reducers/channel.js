@@ -1,8 +1,4 @@
-var initialState = [{
-    id: 1,
-    name: "Test channel",
-    area: 1
-}]
+var initialState = []
 
 export default function reducer(state=initialState, action){
     switch (action.type) {

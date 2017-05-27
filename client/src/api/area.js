@@ -6,3 +6,7 @@ export function findArea({ lat, long}) {
         long: long
     })
 }
+
+export function getUserAreas() {
+    return axios.get('/getUserAreas/')
+}
