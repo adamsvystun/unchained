@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChannelInput from '../../components/ChannelInput'
 import MessageList from '../../components/MessageList'
+import { openChannel, closeChannel } from '../../api/sockets'
 
 import './styles.css';
 
 class ChannelPage extends Component {
+    componentWillMount(){
+        var channel = this.props.match.params.channel
+        openChannel(channel)
+    }
+    componentWillUnmount(){
+        closeChannel();
+    }
     render() {
         var channel = this.props.match.params.channel
         var messages = this.props.messages.filter((o)=>{
