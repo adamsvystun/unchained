@@ -16,16 +16,8 @@ class Channel(models.Model):
     def __str__(self):
         return self.channel_name
 
-class User(models.Model):
-    session_id = models.IntegerField
-    user_name = models.CharField(max_length=30)
-    areas = models.ManyToManyField(Area)
-
-    def __str__(self):
-        return self.user_name
-
 class Message(models.Model):
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=20)
     pub_date = models.DateTimeField('date publised')
     text = models.CharField(max_length=200)
