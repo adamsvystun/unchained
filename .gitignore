@@ -17,7 +17,8 @@ client/node_modules/
 .idea/
 unchainedVirtual/
 coverage/
-
+*.hot-update.js
+*.hot-update.js.map
 *.sqlite3
 .DS_Store
 .env.local
