@@ -5,9 +5,13 @@ import './styles.css';
 
 class AreaPage extends Component {
     render() {
+        var area = this.props.match.params.id
+        var channels = this.props.channels.filter((o)=>{
+            return o.area == area
+        })
         return (
             <div className="wrap">
-                <ChannelList channels={this.props.channels}/>
+                <ChannelList channels={channels}/>
             </div>
         );
     }

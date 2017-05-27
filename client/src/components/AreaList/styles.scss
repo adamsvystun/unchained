@@ -1,10 +1,12 @@
 
 @import "../../styles/core";
 
-.channel-list {
-    margin: 5px;
+.area-list {
 }
-.channel-list__item {
+.area-list__item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     @include card();
     height: 40px;
     line-height: 40px;

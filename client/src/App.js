@@ -12,7 +12,7 @@ import ChannelPage from './containers/ChannelPage'
 
 const App = () => (
 <Router>
-    <div>
+    <div className="app-wrap">
         <Header />
         <Route exact path="/" component={HomePage}/>
         <Route path="/area/:id" component={AreaPage}/>

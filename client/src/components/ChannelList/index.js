@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 
 // import logo from './logo.svg';
 import './styles.scss';
@@ -7,7 +8,9 @@ class ChannelList extends Component {
     render() {
         var channels = this.props.channels
         var channelList = channels.map((o)=>{
-            return (<div className="channel-list__item" key={o.id}>{o.name}</div>)
+            return (<NavLink to={"/channel/"+o.id} className="channel-list__item" key={o.id}>
+                {o.name}
+            </NavLink>)
         })
         return (<div className="channel-list">
             {channelList}

@@ -1,0 +1,24 @@
+@import "../../styles/core";
+
+.channel-input {
+    height: 40px;
+    display: flex;
+}
+.channel-input__wrap {
+    flex: 1;
+}
+#channel-input__input {
+    width: 90%;
+    margin: 4px 5%;
+    padding: 0 0 0 5px;
+    font-size: 16px;
+    outline: 0;
+    border: 1px solid gray;
+    height: 30px;
+}
+#channel-input__submit {
+    padding: 0 15px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px solid $color;
+}

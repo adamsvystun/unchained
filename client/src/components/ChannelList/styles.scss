@@ -2,9 +2,11 @@
 @import "../../styles/core";
 
 .channel-list {
-    margin: 5px;
 }
 .channel-list__item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     @include card();
     height: 40px;
     line-height: 40px;
