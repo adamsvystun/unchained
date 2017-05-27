@@ -18,6 +18,7 @@ client/node_modules/
 unchainedVirtual/
 coverage/
 *.hot-update.js
+*.hot-update.json
 *.hot-update.js.map
 *.sqlite3
 .DS_Store
