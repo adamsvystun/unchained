@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AreaList from '../../components/AreaList'
+import OpenAreaList from '../../components/OpenAreaList';
 import './styles.css';
 import { findArea } from '../../api/area'
 
@@ -13,12 +14,15 @@ class HomePage extends Component {
         }
         this.getLocation()
     }
+    handleAreas(areas){
+        this.setState({areas: areas})
+    }
     consumeLocation(o){
         findArea({
             lat: o.coords.latitude,
             long: o.coords.longitude
         }).then((res)=>{
-            console.log(res)
+            this.handleAreas(res.data)
         })
         this.setState({loc: o})
     }
@@ -30,18 +34,21 @@ class HomePage extends Component {
         }
     }
     render() {
+        var areas = this.state.areas.filter((o)=>{
+            for (var i = 0; i < this.props.areas.length; i++) {
+                if(this.props.areas[i].id == o.id){
+                    return false
+                }
+            }
+            return true
+        })
         var location = ""
-        if(this.state.loc){
-            location = this.state.loc.coords.longitude
-            location += "/"+this.state.loc.coords.latitude
-        }
         return (
             <div className="wrap">
                 <div>Your areas</div>
                 <AreaList areas={this.props.areas} />
                 <div>Open areas</div>
-                <AreaList areas={this.state.areas} />
-                {location}
+                <OpenAreaList dispatch={this.props.dispatch } areas={areas} />
             </div>
         );
     }

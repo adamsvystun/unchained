@@ -21,19 +21,21 @@ def findArea(request):
         areas = []
         for a in results:
             if sqrt((lat - a.xCord) ** 2 + (long - a.yCord) ** 2) <= a.radius:
-                areas.append({'id': a.id, 'area_name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
-        response = JsonResponse(areas, safe=False)
-        return response
+                areas.append({'id': a.id, 'name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
+        print(areas)
+        return JsonResponse(areas, safe=False)
 
 @csrf_exempt
 def channels(request):
     if request.method == "GET":
-        area = int(request.GET["pk"])
+        area = request.GET.get("area")
+        if area:
+            area = int(area)
         print(area)
         resultArea = Area.objects.get(pk=area)
         channels_set = []
         for c in resultArea.channel_set.all():
-            channels_set.append({'id':c.id, 'channel_name':c.channel_name})
+            channels_set.append({'id':c.id, 'name':c.channel_name, 'area': area})
         return JsonResponse(channels_set, safe=False)
 
 def index(request):
