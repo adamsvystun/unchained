@@ -1,3 +1,30 @@
 from django.db import models
 
-# Create your models here.
+class Area(models.Model):
+    area_name = models.CharField(max_length=30)
+    xCord = models.FloatField() #ELKA - 52.218953
+    yCord = models.FloatField() #21.011846
+    radius = models.FloatField() #52.218702|21.010661 = 0,001211291
+
+    def __str__(self):
+        return self.area_name
+
+class Channel(models.Model):
+    area = models.ForeignKey(Area, on_delete=models.CASCADE)
+    channel_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.channel_name
+
+class User(models.Model):
+    session_id = models.IntegerField
+    user_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.user_name
+
+class Message(models.Model):
+    channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    pub_date = models.DateTimeField('date publised')
+    text = models.CharField(max_length=200)

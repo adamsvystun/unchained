@@ -15,7 +15,8 @@ build/
 tests/report/
 *.sqlite3
 client/node_modules/
-
+.idea/
+unchainedVirtual/
 coverage/
 build/
 
