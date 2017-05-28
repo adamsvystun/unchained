@@ -45,6 +45,8 @@ def ws_message(message):
         m = Message(channel_id=int(message.channel_session['room']), user=msg['message']['user'],
                     user_id=int(msg['message']['user_id']), pub_date=timezone.now(), text=msg['message']['text'])
         m.save()
+    else:
+        pass
 
 
 # Connected to websocket.disconnect
