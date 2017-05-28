@@ -22,7 +22,8 @@ def ws_connect(message):
                 "text": m.text,
                 "user": m.user,
                 "pub_date": m.pub_date.isoformat(),
-                "channel": m.channel_id
+                "channel": m.channel_id,
+                'id': m.id
             })
     print(last_messages)
     text = json.dumps({"type": 'fetchMessages', "messages": last_messages})

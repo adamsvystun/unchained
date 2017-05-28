@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from math import sqrt
 import json
 from django.shortcuts import render
+from random import randint, random
 
 @csrf_exempt
 def findArea(request):
@@ -36,6 +37,37 @@ def channels(request):
             channels_set.append({'id':c.id, 'name':c.channel_name, 'area': area})
         return JsonResponse(channels_set, safe=False)
 
+def randomId():
+    return randint(0,100000000)
+
+def randomName():
+    lines = open('nicknames.txt').read().splitlines()
+    return random.choice(lines)
+
+# @csrf_exempt
+# def getUser(request):
+#     if request.method == "GET":
+#         user = request.session.get('user')
+#         if not user:
+#             user = {
+#                 "id": randomId(),
+#                 "name": randomName()
+#             }
+#             request.session["user"] = user
+#         return JsonResponse(user, safe=False)
+#
+# @csrf_exempt
+# def getUserAreas(request):
+#     if request.method == "GET":
+#         areaIds = request.session.get('areas', [])
+#         areaIds = list(set(areaIds))
+#         request.session['areas'] = areaIds
+#         areas = []
+#         for pk in areaIds:
+#             a = Area.objects.get(pk=pk)
+#             areas.append({'id': a.id, 'name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
+#         return JsonResponse(areas, safe=False)
+
 @csrf_exempt
 def getUser(request):
     if request.method == "GET":
@@ -46,11 +78,7 @@ def getUser(request):
                 "name": randomName()
             }
             request.session["user"] = user
-        return JsonResponse(user, safe=False)
 
-@csrf_exempt
-def getUserAreas(request):
-    if request.method == "GET":
         areaIds = request.session.get('areas', [])
         areaIds = list(set(areaIds))
         request.session['areas'] = areaIds
@@ -58,7 +86,9 @@ def getUserAreas(request):
         for pk in areaIds:
             a = Area.objects.get(pk=pk)
             areas.append({'id': a.id, 'name': a.area_name, 'xCord': a.xCord, 'yCord':a.yCord, 'radius':a.radius})
-        return JsonResponse(areas, safe=False)
+        usr = {'id':user['id'], 'name':user['name'], 'areas':areas}
+
+        return JsonResponse(usr, safe=False)
 
 @csrf_exempt
 def addUserArea(request):
