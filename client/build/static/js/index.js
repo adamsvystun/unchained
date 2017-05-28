@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "df15eb5210485bcbe2ea"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "df476a450844d56e0f61"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15251,7 +15251,8 @@ var ChannelList = function (_Component) {
             var channelList = channels.map(function (o, i) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
-                    { to: "/area/" + area + "/channel/" + o.id, className: 'channel-list__item', key: i, __source: {
+                    { to: "/area/" + area + "/channel/" + o.id,
+                        key: i, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 12
                         },
@@ -15264,7 +15265,7 @@ var ChannelList = function (_Component) {
                 'div',
                 { className: 'channel-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 16
+                        lineNumber: 17
                     },
                     __self: this
                 },
@@ -15446,7 +15447,7 @@ var MessageList = function (_Component) {
                 messagesList = messages.map(function (o, i) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { key: i, className: 'message__row', __source: {
+                        { key: i, className: "message__row " + o.className, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 11
                             },
@@ -15687,24 +15688,31 @@ var ChannelPage = function (_Component) {
             var messages = this.props.messages.filter(function (o) {
                 return o.channel == channel;
             });
+            for (var i = 0; i < messages.length; i++) {
+                if (messages[i].user_id == this.props.user.id) {
+                    messages[i].className = "msg--mine";
+                } else {
+                    messages[i].className = "";
+                }
+            }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'wrap channel-page', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 23
+                        lineNumber: 30
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_MessageList__["a" /* default */], { messages: messages, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 24
+                        lineNumber: 31
                     },
                     __self: this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ChannelInput__["a" /* default */], { channel: channel,
                     user: this.props.user, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 25
+                        lineNumber: 32
                     },
                     __self: this
                 })

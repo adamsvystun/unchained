@@ -14,3 +14,6 @@
   border-radius: 15px;
   padding: 0 10px;
   background: lightgray; }
+
+.msg--mine {
+  justify-content: flex-end; }
