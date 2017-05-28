@@ -46,7 +46,7 @@ def ws_message(message):
                     user_id=int(msg['message']['user_id']), pub_date=timezone.now(), text=msg['message']['text'])
         m.save()
     else:
-        pass
+        pass #errors
 
 
 # Connected to websocket.disconnect
