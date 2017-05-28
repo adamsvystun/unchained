@@ -19,5 +19,6 @@ class Channel(models.Model):
 class Message(models.Model):
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
     user = models.CharField(max_length=20)
+    user_id = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date publised')
     text = models.CharField(max_length=200)
