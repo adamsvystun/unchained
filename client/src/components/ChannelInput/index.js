@@ -9,8 +9,9 @@ class ChannelInput extends Component {
         sendMessage({
             text: input.value,
             pub_date: Date.now(),
-            user: "Annonymous",
-            channel: this.props.channel
+            user: this.props.user.name,
+            channel: this.props.channel,
+            user_id: this.props.user.id
         })
         input.value = ""
     }

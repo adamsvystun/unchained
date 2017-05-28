@@ -21,6 +21,7 @@ export default function reducer(state=initialState, action){
             var new_message = {
                 text: action.payload.text,
                 user: action.payload.user || "Annonymous",
+                user_id: action.payload.user_id || 0,
                 pub_date: action.payload.pub_date,
                 channel: action.payload.channel,
                 id: new_id
