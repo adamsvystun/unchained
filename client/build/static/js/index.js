@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "356499382e343ec3c132"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f90e377c3cb5b7965c6c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15152,13 +15152,15 @@ var ChannelInput = function (_Component) {
         key: 'onSend',
         value: function onSend() {
             var input = document.getElementById("channel-input__input");
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__api_sockets__["c" /* sendMessage */])({
-                text: input.value,
-                pub_date: Date.now(),
-                user: this.props.user.name,
-                channel: this.props.channel,
-                user_id: this.props.user.id
-            });
+            if (input.value.length) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__api_sockets__["c" /* sendMessage */])({
+                    text: input.value,
+                    pub_date: Date.now(),
+                    user: this.props.user.name,
+                    channel: this.props.channel,
+                    user_id: this.props.user.id
+                });
+            }
             input.value = "";
         }
     }, {
@@ -15168,7 +15170,7 @@ var ChannelInput = function (_Component) {
                 'div',
                 { className: 'channel-input', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 20
+                        lineNumber: 21
                     },
                     __self: this
                 },
@@ -15176,13 +15178,13 @@ var ChannelInput = function (_Component) {
                     'div',
                     { className: 'channel-input__wrap', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 21
+                            lineNumber: 22
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'channel-input__input', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 22
+                            lineNumber: 23
                         },
                         __self: this
                     })
@@ -15191,7 +15193,7 @@ var ChannelInput = function (_Component) {
                     'div',
                     { id: 'channel-input__submit', onClick: this.onSend.bind(this), __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 24
+                            lineNumber: 25
                         },
                         __self: this
                     },

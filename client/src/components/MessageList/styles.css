@@ -19,3 +19,5 @@
 
 .msg--mine {
   justify-content: flex-end; }
+  .msg--mine .message {
+    background: #07f2d2; }
