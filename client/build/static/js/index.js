@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7031021c4244c5b4c918"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "df15eb5210485bcbe2ea"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -8971,13 +8971,15 @@ function sendMessage(_ref) {
     var text = _ref.text,
         user = _ref.user,
         pub_date = _ref.pub_date,
-        channel = _ref.channel;
+        channel = _ref.channel,
+        user_id = _ref.user_id;
 
     wsocket.send(JSON.stringify({
         type: "addMessage",
         message: {
             text: text,
             user: user,
+            user_id: user_id,
             pub_date: pub_date,
             channel: channel
         }
@@ -15153,8 +15155,9 @@ var ChannelInput = function (_Component) {
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__api_sockets__["c" /* sendMessage */])({
                 text: input.value,
                 pub_date: Date.now(),
-                user: "Annonymous",
-                channel: this.props.channel
+                user: this.props.user.name,
+                channel: this.props.channel,
+                user_id: this.props.user.id
             });
             input.value = "";
         }
@@ -15165,7 +15168,7 @@ var ChannelInput = function (_Component) {
                 'div',
                 { className: 'channel-input', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 19
                     },
                     __self: this
                 },
@@ -15173,13 +15176,13 @@ var ChannelInput = function (_Component) {
                     'div',
                     { className: 'channel-input__wrap', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 20
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'channel-input__input', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 21
                         },
                         __self: this
                     })
@@ -15188,7 +15191,7 @@ var ChannelInput = function (_Component) {
                     'div',
                     { id: 'channel-input__submit', onClick: this.onSend.bind(this), __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 22
+                            lineNumber: 23
                         },
                         __self: this
                     },
@@ -15698,7 +15701,8 @@ var ChannelPage = function (_Component) {
                     },
                     __self: this
                 }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ChannelInput__["a" /* default */], { channel: channel, __source: {
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ChannelInput__["a" /* default */], { channel: channel,
+                    user: this.props.user, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 25
                     },
@@ -15712,7 +15716,10 @@ var ChannelPage = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 function mapStateToProps(state) {
-    return { messages: state.messages };
+    return {
+        messages: state.messages,
+        user: state.user
+    };
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps)(ChannelPage));
@@ -15973,6 +15980,7 @@ function reducer() {
                 var new_message = {
                     text: action.payload.text,
                     user: action.payload.user || "Annonymous",
+                    user_id: action.payload.user_id || 0,
                     pub_date: action.payload.pub_date,
                     channel: action.payload.channel,
                     id: new_id

@@ -29,12 +29,13 @@ export function closeChannel(){
      wsocket.close()
 }
 
-export function sendMessage({ text, user, pub_date, channel}) {
+export function sendMessage({ text, user, pub_date, channel, user_id}) {
     wsocket.send(JSON.stringify({
         type: "addMessage",
         message: {
             text: text,
             user: user,
+            user_id: user_id,
             pub_date: pub_date,
             channel: channel
         }

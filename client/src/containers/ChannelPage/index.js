@@ -22,14 +22,18 @@ class ChannelPage extends Component {
         return (
             <div className="wrap channel-page">
                 <MessageList messages={messages} />
-                <ChannelInput channel={channel}/>
+                <ChannelInput channel={channel}
+                    user={this.props.user}/>
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    return { messages: state.messages }
+    return {
+        messages: state.messages,
+        user: state.user
+    }
 }
 
 export default connect(mapStateToProps)(ChannelPage)
