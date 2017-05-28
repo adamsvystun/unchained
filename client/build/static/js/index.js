@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f90e377c3cb5b7965c6c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e9a1a8fd1f28fd3a557b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15096,11 +15096,23 @@ var AreaList = function (_Component) {
                     o.name
                 );
             });
+            if (!areaList.length) {
+                areaList = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'area-list__item', key: 1, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        },
+                        __self: this
+                    },
+                    'You are not member of any area'
+                );
+            }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'area-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 14
+                        lineNumber: 19
                     },
                     __self: this
                 },
@@ -15580,11 +15592,23 @@ var OpenAreaList = function (_Component) {
                     o.name
                 );
             });
+            if (!areaList.length) {
+                areaList = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'area-list__item', key: 1, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 19
+                        },
+                        __self: this
+                    },
+                    'No open areas around'
+                );
+            }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'area-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 23
                     },
                     __self: this
                 },
@@ -15839,7 +15863,7 @@ var HomePage = function (_Component) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.consumeLocation.bind(this));
             } else {
-                console.log("Geolocation is not supported by this browser.");
+                alert("Geolocation is not supported by this browser.");
             }
         }
     }, {
@@ -15866,8 +15890,7 @@ var HomePage = function (_Component) {
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    {
-                        __source: {
+                    { className: 'h', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 48
                         },
@@ -15883,8 +15906,7 @@ var HomePage = function (_Component) {
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    {
-                        __source: {
+                    { className: 'h', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 50
                         },

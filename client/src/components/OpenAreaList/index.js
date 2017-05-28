@@ -15,6 +15,11 @@ class OpenAreaList extends Component {
                 {o.name}
             </div>)
         })
+        if(!areaList.length) {
+            areaList = <div className="area-list__item" key={1}>
+                No open areas around
+            </div>
+        }
         return (<div className="area-list">
             {areaList}
         </div>)

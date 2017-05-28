@@ -15,10 +15,10 @@
     margin: 3px 0;
 }
 .message {
-    height: 30px;
-    line-height: 30px;
-    border-radius: 15px;
-    padding: 0 10px;
+    height: $message-height;
+    line-height: $message-height;
+    border-radius: $message-height/2;
+    padding: 0 15px;
     background: lightgray;
 }
 .msg--mine {

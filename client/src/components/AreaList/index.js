@@ -11,6 +11,11 @@ class AreaList extends Component {
                 {o.name}
             </NavLink>)
         })
+        if(!areaList.length) {
+            areaList = <div className="area-list__item" key={1}>
+                You are not member of any area
+            </div>
+        }
         return (<div className="area-list">
             {areaList}
         </div>)

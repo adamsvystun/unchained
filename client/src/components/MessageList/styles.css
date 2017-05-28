@@ -11,13 +11,13 @@
   margin: 3px 0; }
 
 .message {
-  height: 30px;
-  line-height: 30px;
-  border-radius: 15px;
-  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  padding: 0 15px;
   background: lightgray; }
 
 .msg--mine {
   justify-content: flex-end; }
   .msg--mine .message {
-    background: #07f2d2; }
+    background: #6bd0f5; }

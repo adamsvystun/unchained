@@ -30,7 +30,7 @@ class HomePage extends Component {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.consumeLocation.bind(this))
         } else {
-            console.log("Geolocation is not supported by this browser.")
+            alert("Geolocation is not supported by this browser.")
         }
     }
     render() {
@@ -45,9 +45,9 @@ class HomePage extends Component {
         var location = ""
         return (
             <div className="wrap">
-                <div>Your areas</div>
+                <div className="h">Your areas</div>
                 <AreaList areas={this.props.areas} />
-                <div>Open areas</div>
+                <div className="h">Open areas</div>
                 <OpenAreaList dispatch={this.props.dispatch } areas={areas} />
             </div>
         );
