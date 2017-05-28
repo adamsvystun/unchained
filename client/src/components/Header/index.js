@@ -12,15 +12,23 @@ class Header extends Component {
             area = this.props.areas.find((o)=>{
                 return o.id == areaId
             })
-            area = (<NavLink to={"/area/"+areaId} className="header__nav-item">
-                {area.name}</NavLink>)
+            if(area){
+                area = (<NavLink to={"/area/"+areaId} className="header__nav-item">
+                    {area.name}</NavLink>)
+            } else {
+                area = null
+            }
         }
         if(channelId){
             channel = this.props.channels.find((o)=>{
                 return o.id == channelId
             })
-            channel = (<NavLink to={"/area/"+areaId+"/channel/"+channelId} className="header__nav-item">
-                {channel.name}</NavLink>)
+            if(channel){
+                channel = (<NavLink to={"/area/"+areaId+"/channel/"+channelId} className="header__nav-item">
+                    {channel.name}</NavLink>)
+            } else {
+                channel = null
+            }
         }
 
 
