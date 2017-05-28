@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d39332a14b8d020b7662"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "cc42f17c9422fff8259e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15438,8 +15438,10 @@ function mapStateToProps(state) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_css__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_css__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/components/MessageList/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15461,6 +15463,11 @@ var MessageList = function (_Component) {
         _classCallCheck(this, MessageList);
 
         var _this = _possibleConstructorReturn(this, (MessageList.__proto__ || Object.getPrototypeOf(MessageList)).call(this, props));
+
+        _this.scrollToBottom = function () {
+            var node = __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.findDOMNode(_this.messagesEnd);
+            node.scrollIntoView({ behavior: "smooth" });
+        };
 
         _this.state = {
             scrolling: false
@@ -15489,12 +15496,18 @@ var MessageList = function (_Component) {
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.__update_scroll = setInterval(this.updateScroll.bind(this), 100);
+            this.scrollToBottom();
+            // this.__update_scroll = setInterval(this.updateScroll.bind(this) , 100);
         }
     }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
-            clearInterval(this.__update_scroll);
+            // clearInterval(this.__update_scroll)
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            this.scrollToBottom();
         }
     }, {
         key: 'render',
@@ -15512,7 +15525,7 @@ var MessageList = function (_Component) {
                             'div',
                             { className: "message__author author--" + o.className, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 40
+                                    lineNumber: 48
                                 },
                                 __self: _this2
                             },
@@ -15525,7 +15538,7 @@ var MessageList = function (_Component) {
                         'div',
                         { key: i, className: "message__wrap wrap--" + o.className, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 44
+                                lineNumber: 52
                             },
                             __self: _this2
                         },
@@ -15534,7 +15547,7 @@ var MessageList = function (_Component) {
                             'div',
                             { key: i, className: "message__row " + o.className, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 46
+                                    lineNumber: 54
                                 },
                                 __self: _this2
                             },
@@ -15542,7 +15555,7 @@ var MessageList = function (_Component) {
                                 'div',
                                 { className: 'message', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 47
+                                        lineNumber: 55
                                     },
                                     __self: _this2
                                 },
@@ -15557,11 +15570,20 @@ var MessageList = function (_Component) {
                 { onScroll: this.onScroll.bind(this),
                     className: 'messages-list', id: 'message-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 52
+                        lineNumber: 60
                     },
                     __self: this
                 },
-                messagesList
+                messagesList,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { style: { float: "left", clear: "both" },
+                    ref: function ref(el) {
+                        _this2.messagesEnd = el;
+                    }, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 63
+                    },
+                    __self: this
+                })
             );
         }
     }]);

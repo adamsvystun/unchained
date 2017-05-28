@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import ReactDOM from 'react-dom'
 import './styles.css'
 
 class MessageList extends Component {
@@ -20,14 +20,22 @@ class MessageList extends Component {
             }
         }
     }
+    scrollToBottom = () => {
+        const node = ReactDOM.findDOMNode(this.messagesEnd);
+        node.scrollIntoView({behavior: "smooth"});
+    }
     onScroll(){
         this.setState({scrolling: true})
     }
     componentDidMount(){
-        this.__update_scroll = setInterval(this.updateScroll.bind(this) , 100);
+        this.scrollToBottom();
+        // this.__update_scroll = setInterval(this.updateScroll.bind(this) , 100);
     }
     componentWillUnmount(){
-        clearInterval(this.__update_scroll)
+        // clearInterval(this.__update_scroll)
+    }
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
     render() {
         var messages = this.props.messages
@@ -52,6 +60,8 @@ class MessageList extends Component {
         return (<div onScroll={this.onScroll.bind(this)}
                 className="messages-list" id="message-list">
             {messagesList}
+            <div style={ {float:"left", clear: "both"} }
+                ref={(el) => { this.messagesEnd = el; }}></div>
         </div>)
     }
 }
