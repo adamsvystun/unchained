@@ -21,6 +21,7 @@ def ws_connect(message):
             last_messages.append({
                 "text": m.text,
                 "user": m.user,
+                "user_id": m.user_id,
                 "pub_date": m.pub_date.isoformat(),
                 "channel": m.channel_id,
                 'id': m.id
