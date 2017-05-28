@@ -9,8 +9,17 @@
     @include card();
     background: $color;
     height: $row-height;
+    width: $row-height;
+    margin-left: auto;
+    border-radius:  $row-height/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 15px;
     line-height: $row-height;
     text-align: center;
     color: inherit;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     text-decoration: none;
 }

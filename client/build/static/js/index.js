@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "28d222761189130a211d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1e2d4bce2c91852bd818"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -8940,6 +8940,7 @@ var wsocket;
 
 function openChannel(id) {
     console.log("[socket] Opening channel " + id);
+    var fetched = false;
     wsocket = new WebSocket("ws://" + window.location.host + "/websocket/" + id);
 
     wsocket.onmessage = function (e) {
@@ -8952,10 +8953,13 @@ function openChannel(id) {
                 }
             case "fetchMessages":
                 {
-                    console.log("[socket] Fetching messages", data);
-                    data.messages.forEach(function (o) {
-                        __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__actions_message__["a" /* addMessage */])(o));
-                    });
+                    if (!fetched) {
+                        console.log("[socket] Fetching messages", data);
+                        data.messages.forEach(function (o) {
+                            __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__actions_message__["a" /* addMessage */])(o));
+                        });
+                        fetched = true;
+                    }
                     break;
                 }
         }
@@ -8974,6 +8978,7 @@ function sendMessage(_ref) {
         channel = _ref.channel,
         user_id = _ref.user_id;
 
+    console.log("[socket] Sending message");
     wsocket.send(JSON.stringify({
         type: "addMessage",
         message: {
@@ -15726,6 +15731,8 @@ var OpenAreaList = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_css__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__styles_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Header__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__add_svg__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__add_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__add_svg__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/containers/AreaPage/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15735,6 +15742,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -15763,13 +15771,13 @@ var AreaPage = function (_Component) {
                 'div',
                 { className: 'app-wrap', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 13
+                        lineNumber: 14
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Header__["a" /* default */], { match: this.props.match, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 14
+                        lineNumber: 15
                     },
                     __self: this
                 }),
@@ -15777,13 +15785,13 @@ var AreaPage = function (_Component) {
                     'div',
                     { className: 'wrap area-page', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 16
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_ChannelList__["a" /* default */], { channels: channels, area: area, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 16
+                            lineNumber: 17
                         },
                         __self: this
                     }),
@@ -15792,11 +15800,16 @@ var AreaPage = function (_Component) {
                         { to: "/area/" + area + "/addchannel",
                             className: 'area-page__add-channel', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 17
+                                lineNumber: 18
                             },
                             __self: this
                         },
-                        'Add channel'
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_6__add_svg___default.a, className: 'area-list__add', alt: 'logo', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 19
+                            },
+                            __self: this
+                        })
                     )
                 )
             );
@@ -16174,13 +16187,7 @@ function reducer() {
 /* harmony export (immutable) */ __webpack_exports__["a"] = reducer;
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var initialState = [{
-    id: 1,
-    text: "Hello",
-    user: "adam",
-    pub_date: Date.now(),
-    channel: 1
-}];
+var initialState = [];
 
 function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -34533,6 +34540,12 @@ module.exports = __webpack_require__.p + "static/media/chevron.cdb45c95.svg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/media/chevron.db0286aa.svg";
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/add.ed74a204.svg";
 
 /***/ })
 /******/ ]);

@@ -4,6 +4,7 @@ var wsocket;
 
 export function openChannel(id){
     console.log("[socket] Opening channel "+id)
+    var fetched = false
     wsocket = new WebSocket("ws://"+ window.location.host +"/websocket/"+id)
 
     wsocket.onmessage = e => {
@@ -14,10 +15,13 @@ export function openChannel(id){
                 break
             }
             case "fetchMessages": {
-                console.log("[socket] Fetching messages",data)
-                data.messages.forEach((o)=>{
-                    store.dispatch(addMessage(o))
-                })
+                if(!fetched){
+                    console.log("[socket] Fetching messages",data)
+                    data.messages.forEach((o)=>{
+                        store.dispatch(addMessage(o))
+                    })
+                    fetched = true
+                }
                 break
             }
         }
@@ -30,6 +34,7 @@ export function closeChannel(){
 }
 
 export function sendMessage({ text, user, pub_date, channel, user_id}) {
+    console.log("[socket] Sending message")
     wsocket.send(JSON.stringify({
         type: "addMessage",
         message: {
