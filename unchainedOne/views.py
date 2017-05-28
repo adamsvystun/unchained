@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from math import sqrt
 import json
 from django.shortcuts import render
-from random import randint, random
+from random import randint, random, choice
 
 @csrf_exempt
 def findArea(request):
@@ -41,8 +41,8 @@ def randomId():
     return randint(0,100000000)
 
 def randomName():
-    lines = open('nicknames.txt').read().splitlines()
-    return random.choice(lines)
+    lines = open('unchainedOne/nicknames.txt').read().splitlines()
+    return choice(lines)
 
 # @csrf_exempt
 # def getUser(request):
