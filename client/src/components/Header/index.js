@@ -13,8 +13,8 @@ class Header extends Component {
                 return o.id == areaId
             })
             if(area){
-                area = [<img src={chevron} className="header__nav-chevron" alt="chevron" />,
-                <NavLink to={"/area/"+areaId} className="header__nav-item">
+                area = [<img key="1" src={chevron} className="header__nav-chevron" alt="chevron" />,
+                <NavLink key="2" to={"/area/"+areaId} className="header__nav-item">
                     {area.name}</NavLink>]
             } else {
                 area = null
@@ -25,8 +25,8 @@ class Header extends Component {
                 return o.id == channelId
             })
             if(channel){
-                channel = [<img src={chevron} className="header__nav-chevron" alt="chevron" />,
-                    <NavLink to={"/area/"+areaId+"/channel/"+channelId} className="header__nav-item">
+                channel = [<img key="3" src={chevron} className="header__nav-chevron" alt="chevron" />,
+                    <NavLink key="4" to={"/area/"+areaId+"/channel/"+channelId} className="header__nav-item">
                     {channel.name}</NavLink>]
             } else {
                 channel = null

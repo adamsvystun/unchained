@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "de4e10e769958f94071d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "28d222761189130a211d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15347,14 +15347,14 @@ var Header = function (_Component) {
                     return o.id == areaId;
                 });
                 if (area) {
-                    area = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default.a, className: 'header__nav-chevron', alt: 'chevron', __source: {
+                    area = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { key: '1', src: __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default.a, className: 'header__nav-chevron', alt: 'chevron', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 16
                         },
                         __self: this
                     }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
-                        { to: "/area/" + areaId, className: 'header__nav-item', __source: {
+                        { key: '2', to: "/area/" + areaId, className: 'header__nav-item', __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 17
                             },
@@ -15371,14 +15371,14 @@ var Header = function (_Component) {
                     return o.id == channelId;
                 });
                 if (channel) {
-                    channel = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default.a, className: 'header__nav-chevron', alt: 'chevron', __source: {
+                    channel = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { key: '3', src: __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default.a, className: 'header__nav-chevron', alt: 'chevron', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 28
                         },
                         __self: this
                     }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
-                        { to: "/area/" + areaId + "/channel/" + channelId, className: 'header__nav-item', __source: {
+                        { key: '4', to: "/area/" + areaId + "/channel/" + channelId, className: 'header__nav-item', __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 29
                             },
