@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6287c2b8969eabba67ee"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7031021c4244c5b4c918"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -6051,7 +6051,7 @@ module.exports = defaults;
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["c"] = findArea;
-/* harmony export (immutable) */ __webpack_exports__["a"] = getUserAreas;
+/* harmony export (immutable) */ __webpack_exports__["a"] = getUser;
 /* harmony export (immutable) */ __webpack_exports__["b"] = addUserArea;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
@@ -6067,8 +6067,8 @@ function findArea(_ref) {
     });
 }
 
-function getUserAreas() {
-    return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/getUserAreas/');
+function getUser() {
+    return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/getUser/');
 }
 
 function addUserArea(_ref2) {
@@ -14942,7 +14942,7 @@ var App = function (_Component) {
         value: function componentWillMount() {
             var _this3 = this;
 
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__api_area__["a" /* getUserAreas */])().then(function (res) {
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__api_area__["a" /* getUser */])().then(function (res) {
                 _this3.props.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__actions_user__["a" /* fetchUser */])({
                     id: res.data.id,
                     name: res.data.name

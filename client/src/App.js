@@ -13,7 +13,7 @@ import ChannelPage from './containers/ChannelPage'
 
 import { addAreaFetchChannels } from './actions/area'
 import { fetchUser } from './actions/user'
-import { getUserAreas } from './api/area'
+import { getUser } from './api/area'
 
 const Home = ({match}) => (<div className="app-wrap">
     <Header match={match}/>
@@ -29,7 +29,7 @@ const Channel = ({match}) => (<div className="app-wrap">
 </div>)
 class App extends Component {
     componentWillMount(){
-        getUserAreas().then((res)=>{
+        getUser().then((res)=>{
             this.props.dispatch(fetchUser({
                 id: res.data.id,
                 name: res.data.name
