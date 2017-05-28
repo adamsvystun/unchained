@@ -8,7 +8,6 @@ class MessageList extends Component {
         this.state = {
             scrolling: false
         }
-
     }
     updateScroll(){
         var msglist = document.getElementById("message-list");
@@ -33,10 +32,20 @@ class MessageList extends Component {
     render() {
         var messages = this.props.messages
         var messagesList;
+        var prev_author;
         if(messages){
             messagesList = messages.map((o, i)=>{
-                return (<div key={i} className={"message__row "+o.className}>
-                    <div className="message">{o.text}</div>
+                var extender = []
+                if(o.user !== prev_author){
+                    extender = (<div className={"message__author author--"+o.className}>{o.user}</div>)
+                    prev_author = o.user
+                }
+
+                return (<div key={i} className={"message__wrap wrap--"+o.className}>
+                    {extender}
+                    <div key={i} className={"message__row "+o.className}>
+                        <div className="message">{o.text}</div>
+                    </div>
                 </div>)
             })
         }
