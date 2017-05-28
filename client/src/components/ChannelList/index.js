@@ -10,7 +10,7 @@ class ChannelList extends Component {
         var area = this.props.area
         var channelList = channels.map((o, i)=>{
             return (<NavLink to={"/area/"+area+"/channel/"+o.id}
-                 key={i}>
+                className={"channel-list__item"} key={i}>
                 {o.name}
             </NavLink>)
         })

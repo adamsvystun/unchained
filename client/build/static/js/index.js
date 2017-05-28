@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "df476a450844d56e0f61"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "af5b941790ff9ea7f17b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15252,7 +15252,7 @@ var ChannelList = function (_Component) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                     { to: "/area/" + area + "/channel/" + o.id,
-                        key: i, __source: {
+                        className: "channel-list__item", key: i, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 12
                         },
