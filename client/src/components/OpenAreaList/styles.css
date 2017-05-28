@@ -1,7 +1,11 @@
+.area-list__add-icon {
+  margin-right: 10px; }
+
 .area-list__item {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  justify-content: space-between;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09);
   border-radius: 3px;

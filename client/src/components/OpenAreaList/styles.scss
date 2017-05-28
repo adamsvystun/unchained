@@ -3,10 +3,14 @@
 
 .area-list {
 }
+.area-list__add-icon {
+    margin-right: 10px;
+}
 .area-list__item {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     @include card();
     height: $row-height;
     line-height: $row-height;

@@ -20,8 +20,7 @@ class ChannelInline(admin.TabularInline):
 
 class AreaAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['area_name']}),
-        ('Area information', {'fields': ['area_name'], 'classes': ['collapse']}),
+        ('Area information', {'fields': ['area_name', 'xCord', 'yCord', 'radius'], 'classes': ['collapse']}),
     ]
     inlines = [ChannelInline]
     list_display = ('area_name', 'xCord', 'yCord', 'radius')

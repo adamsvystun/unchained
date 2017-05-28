@@ -5,6 +5,8 @@ import OpenAreaList from '../../components/OpenAreaList';
 import './styles.css';
 import { findArea } from '../../api/area'
 import Header from '../../components/Header'
+
+
 class HomePage extends Component {
     constructor(props){
         super(props)
@@ -46,6 +48,7 @@ class HomePage extends Component {
         return (<div className="app-wrap">
             <Header match={this.props.match}/>
             <div className="wrap">
+
                 <div className="h">Your areas</div>
                 <AreaList areas={this.props.areas} />
                 <div className="h">Open areas</div>

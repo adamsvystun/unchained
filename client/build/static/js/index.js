@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c44e666cd869346a364b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "de4e10e769958f94071d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -14999,6 +14999,8 @@ function getChannels(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chevron_svg__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chevron_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__chevron_svg__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/components/AreaList/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15008,6 +15010,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -15038,7 +15041,30 @@ var AreaList = function (_Component) {
                         },
                         __self: _this2
                     },
-                    o.name
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 11
+                        },
+                        __self: _this2
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 12
+                            },
+                            __self: _this2
+                        },
+                        o.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__chevron_svg___default.a, className: 'area-list__add-icon', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 13
+                        },
+                        __self: _this2
+                    })
                 );
             });
             if (!areaList.length) {
@@ -15046,7 +15072,7 @@ var AreaList = function (_Component) {
                     'div',
                     { className: 'area-list__item', key: 1, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 17
                         },
                         __self: this
                     },
@@ -15057,7 +15083,7 @@ var AreaList = function (_Component) {
                 'div',
                 { className: 'area-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 21
                     },
                     __self: this
                 },
@@ -15081,6 +15107,8 @@ var AreaList = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api_sockets__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__send_svg__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__send_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__send_svg__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/components/ChannelInput/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15090,6 +15118,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -15127,7 +15156,7 @@ var ChannelInput = function (_Component) {
                 'div',
                 { className: 'channel-input', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 21
+                        lineNumber: 22
                     },
                     __self: this
                 },
@@ -15135,13 +15164,13 @@ var ChannelInput = function (_Component) {
                     'div',
                     { className: 'channel-input__wrap', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 22
+                            lineNumber: 23
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'channel-input__input', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 23
+                            lineNumber: 24
                         },
                         __self: this
                     })
@@ -15150,11 +15179,16 @@ var ChannelInput = function (_Component) {
                     'div',
                     { id: 'channel-input__submit', onClick: this.onSend.bind(this), __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 25
+                            lineNumber: 26
                         },
                         __self: this
                     },
-                    'Send'
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__send_svg___default.a, className: 'channel-input__send', alt: 'send', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
+                        },
+                        __self: this
+                    })
                 )
             );
         }
@@ -15175,6 +15209,8 @@ var ChannelInput = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chevron_svg__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chevron_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__chevron_svg__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/components/ChannelList/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15189,6 +15225,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 // import logo from './logo.svg';
+
 
 
 var ChannelList = function (_Component) {
@@ -15217,14 +15254,37 @@ var ChannelList = function (_Component) {
                         },
                         __self: _this2
                     },
-                    o.name
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 14
+                        },
+                        __self: _this2
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 15
+                            },
+                            __self: _this2
+                        },
+                        o.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__chevron_svg___default.a, className: 'channel-list__add-icon', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 16
+                        },
+                        __self: _this2
+                    })
                 );
             });
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'channel-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 17
+                        lineNumber: 19
                     },
                     __self: this
                 },
@@ -15249,6 +15309,8 @@ var ChannelList = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_css__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chevron_svg__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__chevron_svg__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/components/Header/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15258,6 +15320,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -15284,16 +15347,21 @@ var Header = function (_Component) {
                     return o.id == areaId;
                 });
                 if (area) {
-                    area = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    area = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default.a, className: 'header__nav-chevron', alt: 'chevron', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 16
+                        },
+                        __self: this
+                    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                         { to: "/area/" + areaId, className: 'header__nav-item', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 16
+                                lineNumber: 17
                             },
                             __self: this
                         },
                         area.name
-                    );
+                    )];
                 } else {
                     area = null;
                 }
@@ -15303,16 +15371,21 @@ var Header = function (_Component) {
                     return o.id == channelId;
                 });
                 if (channel) {
-                    channel = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    channel = [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_4__chevron_svg___default.a, className: 'header__nav-chevron', alt: 'chevron', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 28
+                        },
+                        __self: this
+                    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                         { to: "/area/" + areaId + "/channel/" + channelId, className: 'header__nav-item', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 27
+                                lineNumber: 29
                             },
                             __self: this
                         },
                         channel.name
-                    );
+                    )];
                 } else {
                     channel = null;
                 }
@@ -15322,7 +15395,7 @@ var Header = function (_Component) {
                 'div',
                 { className: 'header', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 35
+                        lineNumber: 37
                     },
                     __self: this
                 },
@@ -15330,7 +15403,7 @@ var Header = function (_Component) {
                     'div',
                     { className: 'header__nav', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 36
+                            lineNumber: 38
                         },
                         __self: this
                     },
@@ -15338,7 +15411,7 @@ var Header = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                         { exact: true, to: '/', className: 'header__nav-item', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 37
+                                lineNumber: 39
                             },
                             __self: this
                         },
@@ -15536,6 +15609,8 @@ var MessageList = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions_area__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_css__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_svg__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__add_svg__);
 var _jsxFileName = '/home/adam/workspace/unchained/client/src/components/OpenAreaList/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15545,6 +15620,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -15581,7 +15657,30 @@ var OpenAreaList = function (_Component) {
                         },
                         __self: _this2
                     },
-                    o.name
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        },
+                        __self: _this2
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 16
+                            },
+                            __self: _this2
+                        },
+                        o.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_4__add_svg___default.a, className: 'area-list__add-icon', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 17
+                        },
+                        __self: _this2
+                    })
                 );
             });
             if (!areaList.length) {
@@ -15589,7 +15688,7 @@ var OpenAreaList = function (_Component) {
                     'div',
                     { className: 'area-list__item', key: 1, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 21
                         },
                         __self: this
                     },
@@ -15600,7 +15699,7 @@ var OpenAreaList = function (_Component) {
                 'div',
                 { className: 'area-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 23
+                        lineNumber: 25
                     },
                     __self: this
                 },
@@ -15924,13 +16023,13 @@ var HomePage = function (_Component) {
                 'div',
                 { className: 'app-wrap', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 46
+                        lineNumber: 48
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_Header__["a" /* default */], { match: this.props.match, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 47
+                        lineNumber: 49
                     },
                     __self: this
                 }),
@@ -15938,7 +16037,7 @@ var HomePage = function (_Component) {
                     'div',
                     { className: 'wrap', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 48
+                            lineNumber: 50
                         },
                         __self: this
                     },
@@ -15946,7 +16045,7 @@ var HomePage = function (_Component) {
                         'div',
                         { className: 'h', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 49
+                                lineNumber: 52
                             },
                             __self: this
                         },
@@ -15954,7 +16053,7 @@ var HomePage = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_AreaList__["a" /* default */], { areas: this.props.areas, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 50
+                            lineNumber: 53
                         },
                         __self: this
                     }),
@@ -15962,7 +16061,7 @@ var HomePage = function (_Component) {
                         'div',
                         { className: 'h', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 51
+                                lineNumber: 54
                             },
                             __self: this
                         },
@@ -15970,7 +16069,7 @@ var HomePage = function (_Component) {
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_OpenAreaList__["a" /* default */], { dispatch: this.props.dispatch, areas: areas, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 52
+                            lineNumber: 55
                         },
                         __self: this
                     })
@@ -34402,6 +34501,38 @@ function mapStateToProps(state) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 344 */,
+/* 345 */,
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/add.ed74a204.svg";
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/chevron.db0286aa.svg";
+
+/***/ }),
+/* 348 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/send.772f86f1.svg";
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/chevron.cdb45c95.svg";
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/chevron.db0286aa.svg";
 
 /***/ })
 /******/ ]);
