@@ -14,6 +14,7 @@ class ChannelInput extends Component {
             user_id: this.props.user.id
         })
         input.value = ""
+        
     }
     render() {
         return (<div className="channel-input">

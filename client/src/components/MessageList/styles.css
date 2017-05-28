@@ -1,8 +1,10 @@
 .messages-list {
   flex: 1;
-  display: flex;
+  overflow-y: auto;
   flex-direction: column;
   justify-content: flex-end; }
+  .messages-list::-webkit-scrollbar {
+    display: none; }
 
 .message__row {
   display: flex;
