@@ -19,6 +19,13 @@ class ChannelPage extends Component {
         var messages = this.props.messages.filter((o)=>{
             return o.channel == channel
         })
+        for (var i = 0; i < messages.length; i++) {
+            if(messages[i].user_id == this.props.user.id){
+                messages[i].className = "msg--mine"
+            } else {
+                messages[i].className = ""
+            }
+        }
         return (
             <div className="wrap channel-page">
                 <MessageList messages={messages} />

@@ -6,13 +6,15 @@ import './styles.css'
 class ChannelInput extends Component {
     onSend() {
         var input = document.getElementById("channel-input__input")
-        sendMessage({
-            text: input.value,
-            pub_date: Date.now(),
-            user: this.props.user.name,
-            channel: this.props.channel,
-            user_id: this.props.user.id
-        })
+        if(input.value.length){
+            sendMessage({
+                text: input.value,
+                pub_date: Date.now(),
+                user: this.props.user.name,
+                channel: this.props.channel,
+                user_id: this.props.user.id
+            })
+        }
         input.value = ""
     }
     render() {

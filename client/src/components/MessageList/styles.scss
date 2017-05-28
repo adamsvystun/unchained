@@ -3,9 +3,12 @@
 
 .messages-list {
     flex: 1;
-    display: flex;
+    overflow-y: auto;
     flex-direction: column;
     justify-content: flex-end;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 .message__row {
     display: flex;
@@ -17,4 +20,10 @@
     border-radius: 15px;
     padding: 0 10px;
     background: lightgray;
+}
+.msg--mine {
+    justify-content: flex-end;
+    .message {
+        background: $color;
+    }
 }

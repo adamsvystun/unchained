@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "df15eb5210485bcbe2ea"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f90e377c3cb5b7965c6c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -15152,13 +15152,15 @@ var ChannelInput = function (_Component) {
         key: 'onSend',
         value: function onSend() {
             var input = document.getElementById("channel-input__input");
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__api_sockets__["c" /* sendMessage */])({
-                text: input.value,
-                pub_date: Date.now(),
-                user: this.props.user.name,
-                channel: this.props.channel,
-                user_id: this.props.user.id
-            });
+            if (input.value.length) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__api_sockets__["c" /* sendMessage */])({
+                    text: input.value,
+                    pub_date: Date.now(),
+                    user: this.props.user.name,
+                    channel: this.props.channel,
+                    user_id: this.props.user.id
+                });
+            }
             input.value = "";
         }
     }, {
@@ -15168,7 +15170,7 @@ var ChannelInput = function (_Component) {
                 'div',
                 { className: 'channel-input', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 21
                     },
                     __self: this
                 },
@@ -15176,13 +15178,13 @@ var ChannelInput = function (_Component) {
                     'div',
                     { className: 'channel-input__wrap', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 22
                         },
                         __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'channel-input__input', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 21
+                            lineNumber: 23
                         },
                         __self: this
                     })
@@ -15191,7 +15193,7 @@ var ChannelInput = function (_Component) {
                     'div',
                     { id: 'channel-input__submit', onClick: this.onSend.bind(this), __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 23
+                            lineNumber: 25
                         },
                         __self: this
                     },
@@ -15251,7 +15253,8 @@ var ChannelList = function (_Component) {
             var channelList = channels.map(function (o, i) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
-                    { to: "/area/" + area + "/channel/" + o.id, className: 'channel-list__item', key: i, __source: {
+                    { to: "/area/" + area + "/channel/" + o.id,
+                        className: "channel-list__item", key: i, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 12
                         },
@@ -15264,7 +15267,7 @@ var ChannelList = function (_Component) {
                 'div',
                 { className: 'channel-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 16
+                        lineNumber: 17
                     },
                     __self: this
                 },
@@ -15429,13 +15432,47 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var MessageList = function (_Component) {
     _inherits(MessageList, _Component);
 
-    function MessageList() {
+    function MessageList(props) {
         _classCallCheck(this, MessageList);
 
-        return _possibleConstructorReturn(this, (MessageList.__proto__ || Object.getPrototypeOf(MessageList)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (MessageList.__proto__ || Object.getPrototypeOf(MessageList)).call(this, props));
+
+        _this.state = {
+            scrolling: false
+        };
+
+        return _this;
     }
 
     _createClass(MessageList, [{
+        key: 'updateScroll',
+        value: function updateScroll() {
+            var msglist = document.getElementById("message-list");
+            if (!this.state.scrolling) {
+                msglist.scrollTop = msglist.scrollHeight;
+            } else {
+
+                if (msglist.scrollHeight - msglist.offsetHeight === msglist.scrollTop) {
+                    this.setState({ scrolling: false });
+                }
+            }
+        }
+    }, {
+        key: 'onScroll',
+        value: function onScroll() {
+            this.setState({ scrolling: true });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.__update_scroll = setInterval(this.updateScroll.bind(this), 100);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            clearInterval(this.__update_scroll);
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -15446,9 +15483,9 @@ var MessageList = function (_Component) {
                 messagesList = messages.map(function (o, i) {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { key: i, className: 'message__row', __source: {
+                        { key: i, className: "message__row " + o.className, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 11
+                                lineNumber: 38
                             },
                             __self: _this2
                         },
@@ -15456,7 +15493,7 @@ var MessageList = function (_Component) {
                             'div',
                             { className: 'message', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 12
+                                    lineNumber: 39
                                 },
                                 __self: _this2
                             },
@@ -15467,9 +15504,10 @@ var MessageList = function (_Component) {
             }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'messages-list', __source: {
+                { onScroll: this.onScroll.bind(this),
+                    className: 'messages-list', id: 'message-list', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 16
+                        lineNumber: 43
                     },
                     __self: this
                 },
@@ -15687,24 +15725,31 @@ var ChannelPage = function (_Component) {
             var messages = this.props.messages.filter(function (o) {
                 return o.channel == channel;
             });
+            for (var i = 0; i < messages.length; i++) {
+                if (messages[i].user_id == this.props.user.id) {
+                    messages[i].className = "msg--mine";
+                } else {
+                    messages[i].className = "";
+                }
+            }
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'wrap channel-page', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 23
+                        lineNumber: 30
                     },
                     __self: this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_MessageList__["a" /* default */], { messages: messages, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 24
+                        lineNumber: 31
                     },
                     __self: this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_ChannelInput__["a" /* default */], { channel: channel,
                     user: this.props.user, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 25
+                        lineNumber: 32
                     },
                     __self: this
                 })
