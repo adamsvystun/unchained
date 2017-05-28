@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ChannelInput from '../../components/ChannelInput'
 import MessageList from '../../components/MessageList'
 import { openChannel, closeChannel } from '../../api/sockets'
-
+import Header from '../../components/Header'
 import './styles.css';
 
 class ChannelPage extends Component {
@@ -26,12 +26,15 @@ class ChannelPage extends Component {
                 messages[i].className = ""
             }
         }
-        return (
+        return (<div className="app-wrap">
+            <Header match={this.props.match}/>
             <div className="wrap channel-page">
                 <MessageList messages={messages} />
                 <ChannelInput channel={channel}
                     user={this.props.user}/>
             </div>
+        </div>
+
         );
     }
 }

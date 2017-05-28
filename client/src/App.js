@@ -6,27 +6,16 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-import Header from './components/Header'
+
 import HomePage from './containers/HomePage'
 import AreaPage from './containers/AreaPage'
 import ChannelPage from './containers/ChannelPage'
+import AddChannelPage from './containers/AddChannelPage'
 
 import { addAreaFetchChannels } from './actions/area'
 import { fetchUser } from './actions/user'
 import { getUser } from './api/area'
 
-const Home = ({match}) => (<div className="app-wrap">
-    <Header match={match}/>
-    <HomePage match={match}/>
-</div>)
-const Area = ({match}) => (<div className="app-wrap">
-    <Header match={match}/>
-    <AreaPage match={match}/>
-</div>)
-const Channel = ({match}) => (<div className="app-wrap">
-    <Header match={match}/>
-    <ChannelPage match={match}/>
-</div>)
 class App extends Component {
     componentWillMount(){
         getUser().then((res)=>{
@@ -43,9 +32,10 @@ class App extends Component {
         return (
         <Router>
             <div className="router-wrap">
-                <Route exact strict path="/" component={Home}/>
-                <Route exact path="/area/:area" component={Area}/>
-                <Route exact path="/area/:area/channel/:channel" component={Channel}/>
+                <Route exact strict path="/" component={HomePage}/>
+                <Route exact path="/area/:area" component={AreaPage}/>
+                <Route exact path="/area/:area/channel/:channel" component={ChannelPage}/>
+                <Route exact path="/area/:area/addchannel" component={AddChannelPage}/>
             </div>
         </Router>
         )

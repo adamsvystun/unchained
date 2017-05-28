@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import ReactDOM from 'react-dom'
 import './styles.css'
 
 class MessageList extends Component {
@@ -8,7 +8,6 @@ class MessageList extends Component {
         this.state = {
             scrolling: false
         }
-
     }
     updateScroll(){
         var msglist = document.getElementById("message-list");
@@ -21,28 +20,48 @@ class MessageList extends Component {
             }
         }
     }
+    scrollToBottom = () => {
+        const node = ReactDOM.findDOMNode(this.messagesEnd);
+        node.scrollIntoView({behavior: "smooth"});
+    }
     onScroll(){
         this.setState({scrolling: true})
     }
     componentDidMount(){
-        this.__update_scroll = setInterval(this.updateScroll.bind(this) , 100);
+        this.scrollToBottom();
+        // this.__update_scroll = setInterval(this.updateScroll.bind(this) , 100);
     }
     componentWillUnmount(){
-        clearInterval(this.__update_scroll)
+        // clearInterval(this.__update_scroll)
+    }
+    componentDidUpdate() {
+        this.scrollToBottom();
     }
     render() {
         var messages = this.props.messages
         var messagesList;
+        var prev_author;
         if(messages){
             messagesList = messages.map((o, i)=>{
-                return (<div key={i} className={"message__row "+o.className}>
-                    <div className="message">{o.text}</div>
+                var extender = []
+                if(o.user !== prev_author){
+                    extender = (<div className={"message__author author--"+o.className}>{o.user}</div>)
+                    prev_author = o.user
+                }
+
+                return (<div key={i} className={"message__wrap wrap--"+o.className}>
+                    {extender}
+                    <div key={i} className={"message__row "+o.className}>
+                        <div className="message">{o.text}</div>
+                    </div>
                 </div>)
             })
         }
         return (<div onScroll={this.onScroll.bind(this)}
                 className="messages-list" id="message-list">
             {messagesList}
+            <div style={ {float:"left", clear: "both"} }
+                ref={(el) => { this.messagesEnd = el; }}></div>
         </div>)
     }
 }

@@ -18,6 +18,7 @@
     height: $message-height;
 }
 #channel-input__submit {
+    display: flex;
     padding: 0 15px;
     line-height: $message-height;
     border-radius: 3px;

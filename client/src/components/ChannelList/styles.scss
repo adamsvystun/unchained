@@ -3,16 +3,19 @@
 
 .channel-list {
 }
+.channel-list__add-icon {
+    margin-right: 10px;
+}
 .channel-list__item {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     @include card();
     height: $row-height;
     line-height: $row-height;
-    padding-left: 5px;
     margin-bottom: 5px;
     text-transform: uppercase;
     text-align: center;
-    background: #fff;
+    padding-left: 5px;
 }

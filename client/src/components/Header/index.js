@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
 import './styles.css';
-
+import chevron from './chevron.svg'
 class Header extends Component {
     render() {
         var areaId = this.props.match.params.area
@@ -13,8 +13,9 @@ class Header extends Component {
                 return o.id == areaId
             })
             if(area){
-                area = (<NavLink to={"/area/"+areaId} className="header__nav-item">
-                    {area.name}</NavLink>)
+                area = [<img src={chevron} className="header__nav-chevron" alt="chevron" />,
+                <NavLink to={"/area/"+areaId} className="header__nav-item">
+                    {area.name}</NavLink>]
             } else {
                 area = null
             }
@@ -24,8 +25,9 @@ class Header extends Component {
                 return o.id == channelId
             })
             if(channel){
-                channel = (<NavLink to={"/area/"+areaId+"/channel/"+channelId} className="header__nav-item">
-                    {channel.name}</NavLink>)
+                channel = [<img src={chevron} className="header__nav-chevron" alt="chevron" />,
+                    <NavLink to={"/area/"+areaId+"/channel/"+channelId} className="header__nav-item">
+                    {channel.name}</NavLink>]
             } else {
                 channel = null
             }

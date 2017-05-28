@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { sendMessage } from '../../api/sockets'
 
 import './styles.css'
+import send from './send.svg'
 
 class ChannelInput extends Component {
     onSend() {
@@ -23,7 +24,7 @@ class ChannelInput extends Component {
                 <input type="text" id="channel-input__input" />
             </div>
             <div id="channel-input__submit" onClick={this.onSend.bind(this)}>
-                Send
+                <img src={send} className="channel-input__send" alt="send" />
             </div>
         </div>)
     }

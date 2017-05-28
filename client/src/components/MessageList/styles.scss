@@ -21,6 +21,13 @@
     padding: 0 15px;
     background: lightgray;
 }
+.message__author {
+    font-size: 14px;
+    color: gray;
+}
+.author--msg--mine {
+    text-align: right;
+}
 .msg--mine {
     justify-content: flex-end;
     .message {

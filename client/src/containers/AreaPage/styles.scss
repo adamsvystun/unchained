@@ -1,0 +1,16 @@
+@import "../../styles/core";
+
+.area-page {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.area-page__add-channel {
+    @include card();
+    background: $color;
+    height: $row-height;
+    line-height: $row-height;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+}
